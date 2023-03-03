@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Freight by Codeinblock SpA</title>
+
+    <meta property="og:title" content="Calculadora para importaciones - CodeinBlock">
+    <meta property="og:site_name" content="Codeinblock">
+    <meta property="og:url" content="https://calculate-freight.codeinblock.com"/>
+    <meta property="og:description" content="Usa esta calculadora de forma gratuita, para conocer los costos globales de tu importación en Dólares (USD) y Pesos Chilenos (CLP).">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.ibb.co/9pxrtD6/logo-cfreight.png">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+    <!-- fontawesome 6.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap 5.1.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/app.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="topbar bg-primary-gradient">
+            <div class="container d-flex flex-wrap">
+                <ul class="nav me-auto">
+                    <li class="nav-item">
+                        <a href="mailto:hello@codeinblock.com" class="nav-link link-dark px-2 email"><i
+                                class="fa-regular fa-envelope"></i> hello@codeinblock.com</a>
+                    </li>
+                </ul>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="#comingsoon" class="nav-link link-dark px-2 social-link"><i
+                                class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/company/code-in-block-technology/" target="_blank"
+                            rel="noopener,nofollow" class="nav-link link-dark px-2 social-link"><i
+                                class="fab fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container menu text-white p-3">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img src="./assets/img/logo-calculate.svg" width="130">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto ms-lg-auto justify-content-center mb-2 mb-md-0 me-4">
+                    <li class="text-white my-4 my-lg-0">Dólar aduanero: $<span id="dolarAduanero"
+                            class="fw-bold">0.00</span></li>
+                </ul>
+
+                <div class="text-end">
+                    <a href="mailto:hello@codeinblock.com" class="btn btn-primary me-2 px-4 py-2">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-2 py-lg-5">
+        <div class="container">
+            <div class="row pb-lg-0">
+                <div class="col-12 col-lg-2">
+                    <div class="mb-lg-0 mb-3">
+                        <div class="ads-banner">
+                            <p class="mb-0"><small>publicidad</small>:</p>
+                            <a href="mailto:ads@codeinblock.com">
+                                <picture>
+                                    <source media="(min-width: 1024px)"
+                                        srcset="https://via.placeholder.com/170x450?text=ads" alt="ads-banner">
+                                    <source media="(min-width: 768px)"
+                                        srcset="https://via.placeholder.com/960x200?text=ads" alt="ads-banner">
+                                    <img src="https://via.placeholder.com/768x200?text=ads" alt="ads-banner">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8 pt-0 pt-lg-4 d-flex">
+                    <div class="card py-5 px-4 py-lg-4 px-lg-5 mb-3 mb-lg-0 bg-dark">
+
+                        <div class="card-body calculate-freight">
+
+                            <h1 class="display-6 text-center">Calculadora para importaciones</h1>
+                            <p class="mb-0">Usa esta calculadora de forma gratuita, para conocer los costos globales de
+                                tu importación en Dólares (USD) y Pesos Chilenos (CLP).<br> <span
+                                    class="fw-bold">Recuerda ingresar solo los valores
+                                    netos.</span></p>
+
+                            <div class="row">
+                                <div class="col-12 col-lg-12 mt-4 mb-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="checkOrigin">
+                                        <label class="form-check-label fw-light" for="checkOrigin">
+                                            Tengo <u>certificado de origen*</u> <i
+                                                class="fa-solid fa-circle-question text-warning"
+                                                data-bs-toggle="tooltip" data-bs-placement="right"
+                                                title="Certificado que acredita el origen de las mercancías."></i>
+                                        </label>
+                                    </div>
+                                    <p><small>*marca la casilla si cuentas con el certificado de origen de tu
+                                            importación.</small></p>
+                                </div>
+                                <div id="result"></div>
+                            </div>
+
+                            <div class="box-calculate p-3">
+                                <form>
+
+                                    <div class="row">
+                                        <div class="col-12 col-md-4 col-lg-4">
+                                            <div class="mb-3">
+                                                <label for="priceProduct" class="form-label">Costo de la carga
+                                                    (USD)</label>
+                                                <input class="form-control currency" id="priceProduct"
+                                                    placeholder="$0.00">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-4">
+                                            <div class="mb-3">
+                                                <label for="priceFreight" class="form-label">Costo del flete
+                                                    (USD)</label>
+                                                <input class="form-control currency" id="priceFreight"
+                                                    placeholder="$0.00">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-4">
+                                            <div class="mb-3">
+                                                <label for="priceInsurance" class="form-label">Costo del seguro
+                                                    (USD)</label>
+                                                <input class="form-control currency" id="priceInsurance"
+                                                    placeholder="$0.00">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="alertError" class="d-none" role="alert">
+                                        <p class="text-warning"><small>Recuerda que debes ingresar todos los costos
+                                                solicitados, para realizar el cálculo.</small></p>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-lg-12">
+                                            <button type="button" id="buttonCalculate"
+                                                class="btn btn-success me-2 px-4 py-2"
+                                                onclick="getCalculateImport()">calcular</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-12">
+                                <div id="responseCalculate" class="my-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <div class="mb-lg-0 mb-3">
+                        <div class="ads-banner">
+                            <p class="mb-0"><small>publicidad</small>:</p>
+                            <a href="mailto:ads@codeinblock.com">
+                                <picture>
+                                    <source media="(min-width: 1024px)"
+                                        srcset="https://via.placeholder.com/170x450?text=ads" alt="ads-banner">
+                                    <source media="(min-width: 768px)"
+                                        srcset="https://via.placeholder.com/960x200?text=ads" alt="ads-banner">
+                                    <img src="https://via.placeholder.com/768x200?text=ads" alt="ads-banner">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-5 pt-lg-5 bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <h3 class="text-center">Certificados de origen, acuerdos y tratados comerciales</h3>
+                    <p class="mb-5 mx-2">
+                        Las preferencias arancelarias establecidas por los acuerdos comerciales suscritos hasta ahora
+                        por Chile, normalmente permiten a los <strong>Operadores de Comercio Exterior</strong> no tener
+                        que pagar los aranceles aduaneros asociados a la importación de ciertas mercancías,
+                        <strong>recaudándose solamente el IVA</strong> (u otros impuestos adicionales o específicos
+                        dependiendo de la mercancía).
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                    <div class="card info-card bg-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Certificado de origen</h5>
+                            <p class="card-text">Certificado que acredita que las mercancías cumplen con los requisitos
+                                del acuerdo que se invoca, emitido por una entidad habilitada para hacerlo.</p>
+
+                        </div>
+                        <div class="card-footer text-start">
+                            <a href="https://www.aduana.cl/certificados-de-origen-acuerdos-y-tratados-comerciales/aduana/2019-01-04/160331.html"
+                                target="_blank" rel="noopener,nofollow" class="btn btn-primary">más información</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                    <div class="card info-card bg-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Derecho Advalorem</h5>
+                            <p class="card-text">Las importaciones están afectas al pago del derecho ad valorem (6%) que
+                                se calcula sobre su valor CIF (costo de la mercancía + prima de el seguro + valor del
+                                flete de traslado).</p>
+                        </div>
+                        <div class="card-footer text-start">
+                            <a href="https://www.sii.cl/ayudas/aprenda_sobre/3072-7-3079.html" target="_blank"
+                                rel="noopener,nofollow" class="btn btn-primary">más información</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                    <div class="card info-card bg-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Valor CIF</h5>
+                            <p class="card-text">El Arancel Aduanero se paga sobre el Valor CIF de la mercancía, que
+                                corresponde a la suma del valor de tu producto en el país de origen, más el costo por
+                                flete y seguros involucrados para su transporte al punto de destino.</p>
+                        </div>
+                        <div class="card-footer text-start">
+                            <a href="https://www.aduana.cl/cuando-debo-pagar-impuestos/aduana/2018-12-12/233227.html"
+                                target="_blank" rel="noopener,nofollow" class="btn btn-primary">más información</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark">
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-5">
+
+
+                <a href="index.html" class="col-md-4 mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <img src="./assets/img/logo.svg" width="170">
+                </a>
+
+                <p class="col-md-4 mb-0 pb-0 text-muted text-center"><small>&copy; 2022 Calculate Freight v1.0.1 - Hecho con <i
+                            class="fa-solid fa-heart text-danger"></i> en Chile</small></p>
+
+                <ul class="col-md-4 nav justify-content-end">
+                    <li class="nav-item">
+                        <a href="#comingsoon" class="nav-link text-light px-2 social-link"><i
+                                class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/company/code-in-block-technology/" target="_blank"
+                            rel="noopener,nofollow" class="nav-link text-light px-2 social-link"><i
+                                class="fab fa-linkedin"></i></a>
+                    </li>
+                </ul>
+
+            </footer>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/imask@6.4.2/dist/imask.min.js"></script>
+    <script src="./assets/js/dolarCustoms.js"></script>
+    <script src="./assets/js/app.min.js"></script>
+</body>
+
+</html>

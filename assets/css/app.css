@@ -1,0 +1,352 @@
+/* fuentes codeinblock */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
+
+@font-face {
+    font-family: 'Nexa Bold';
+    src: url('../fonts/nexa/NexaBold.woff');
+}
+
+/* fuentes codeinblock */
+@font-face {
+    font-family: 'Nexa Regular';
+    src: url('../fonts/nexa/NexaRegular.woff');
+}
+
+/* CONFIG */
+:root {
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Nexa Bold', sans-serif;
+    --font-heading-regular: 'Nexa Regular', sans-serif;
+
+    --font-weight-body: 400;
+
+    --color-dark: #090a1a;
+    --color-light: #f2f2f2;
+    --color-primary: #B3FFAB;
+    --color-secondary: #12FFF7;
+    --color-text-body: #838995;
+
+    --bg-dark: var(--color-dark);
+    --bg-light: var(--color-light);
+    --bg-primary: var(--color-primary);
+    --bg-secondary: var(--color-secondary);
+
+    --bg-gradient: linear-gradient(to right, #b3ffab, #12fff7);
+    --bg-gradient-hover: linear-gradient(to left, #b3ffab, #12fff7);
+    --transition: .5s;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* GLOBAL */
+body {
+    background-color: var(--bg-dark);
+    scroll-behavior: auto;
+    color: #f2f2f2;
+    font-size: 1em;
+    font-family: var(--font-body);
+    position: relative;
+}
+
+body:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(https://nuron-vue.rainbowit.net/img/noise.e7f2a273.gif);
+    z-index: -1;
+    background-color: var(--bg-dark);
+    opacity: .05;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+
+p,
+ul,
+li {
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-body);
+    color: var(--color-text-body);
+}
+
+a {
+    transition: var(--transition);
+}
+
+a:hover {
+    transition: var(--transition);
+}
+
+strong {
+    font-weight: bold;
+}
+
+u {
+    border-bottom: 1px dotted var(--color-text-body);
+    text-decoration: none;
+}
+
+/**/
+
+.container {
+    max-width: 1140px;
+}
+
+.color-primary {
+    color: var(--color-primary);
+}
+
+.color-secondary {
+    color: var(--color-secondary);
+}
+
+.parpadeo {
+    animation-name: parpadeo;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -moz-appearance-animation-name: parpadeo;
+    -moz-appearance-duration: 1.5s;
+    -moz-appearance-timing-function: linear;
+    -moz-appearance-iteration-count: infinite;
+    -webkit-animation-name: parpadeo;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+/* custom b5 */
+
+.bg-dark {
+    background-color: var(--bg-dark) !important;
+}
+
+.bg-primary {
+    background: var(--bg-primary) !important;
+}
+
+.bg-secondary {
+    background: var(--bg-secondary) !important;
+}
+
+.bg-primary-gradient {
+    background: var(--bg-gradient) !important;
+}
+
+.btn-outline-light {
+    color: var(--color-light);
+    border-color: var(--color-light);
+}
+
+.btn-outline-light:hover {
+    color: var(--color-dark);
+    border-color: var(--color-light);
+    background-color: var(--bg-light);
+}
+
+.btn {
+    font-family: var(--font-heading);
+    text-transform: lowercase;
+}
+
+a.btn.btn-primary,
+button.btn.btn-primary {
+    background: var(--bg-gradient);
+    border: none;
+    color: var(--color-dark);
+    transition: var(--transition)
+}
+
+a.btn.btn-primary:hover,
+button.btn.btn-primary:hover {
+    background: var(--bg-gradient-hover);
+    border: none;
+    color: var(--color-dark);
+    transition: var(--transition)
+}
+
+.btn-secondary {
+    background-color: var(--color-text-body);
+}
+
+.text-dark {
+    color: var(--color-dark) !important;
+}
+
+.text-light {
+    color: var(--color-light) !important
+}
+
+/* header */
+.topbar .email.nav-link {
+    font-size: .95em;
+    font-family: var(--font-body);
+    color: var(--color-dark);
+}
+
+.topbar .email.nav-link:hover {
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.topbar .social-link:hover {
+    transform: scale(1.2);
+}
+
+.menu .nav-link {
+    font-family: var(--font-heading);
+    text-transform: lowercase;
+    border-bottom: none;
+    position: relative;
+}
+
+.menu .nav-link:hover:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 80%;
+    height: 2.5912px;
+    transform: translateX(-50%);
+    background-color: var(--bg-primary);
+    transition: var(--transition);
+}
+
+.form-control {
+    font-size: 1.5rem;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(178 255 171 / 25%);
+}
+
+/* body */
+.box-dolar p:first-child {
+    font-family: var(--font-heading-regular);
+    color: var(--color-primary);
+}
+
+.box-calculate {
+    background-color: #05050e;
+}
+
+.card {
+    border: 1px solid var(--color-text-body) !important;
+}
+
+.card-body h1, .card-title {
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ads-banner:hover {
+    filter: brightness(1.1);
+}
+
+/*card calculate-freight */
+.card-body.calculate-freight {
+    padding: 0;
+}
+
+.card-body.calculate-freight .lead {
+    font-size: 1em;
+    color: var(--color-text-body);
+}
+
+.card-body.calculate-freight h3 {
+    font-family: var(--font-heading);
+}
+
+.card-body.calculate-freight label {
+    font-size: 1em;
+    color: var(--color-light);
+    font-family: var(--font-heading-regular);
+    font-weight: bold
+}
+
+.p-calculate span {
+    font-weight: bold;
+    color: var(--color-light);
+}
+
+.card.info-card {
+    min-height: 280px;
+}
+
+/**/
+#responseCalculate p u {
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    #buttonCalculate {
+        width: 100%;
+    }
+}
